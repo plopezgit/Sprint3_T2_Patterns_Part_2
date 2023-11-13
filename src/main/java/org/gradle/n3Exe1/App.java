@@ -1,17 +1,18 @@
 package org.gradle.n3Exe1;
 
-import org.gradle.n3Exe1.entity.CurrencyConverter;
-import org.gradle.n3Exe1.entity.EuroDolarConversor;
-import org.gradle.n3Exe1.entity.Vending;
+import org.gradle.n3Exe1.entity.*;
 
 public class App {
 
 	public static void main(String[] args) {
 		
 		CurrencyConverter currencyConverter = new EuroDolarConversor();
-		Vending vending = new Vending(currencyConverter);
-			
+		//CurrencyConverter currencyConverter = new EuroYuanConversor();
+		
+		Vending vending = new Vending(currencyConverter);	
 		vending.printPriceAndConversionByArticle();
+		
+
 
 	}
 
