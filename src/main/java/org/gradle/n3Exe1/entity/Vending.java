@@ -7,18 +7,31 @@ public class Vending {
 
 	private Map<Integer, Article> articles;
 	private CurrencyConverter currencyConverterRepository;
+	private String inputCurrencyLabel;
+	private String outputCurrencyLabel;
 
 	public Vending(CurrencyConverter currencyConverterRepository) {
 		articles = new HashMap<>();
 		articles.put(1, new Article("Bones | OG Formula Sidecuts Skateboard Wheels 54mm", 39.00F));
 		articles.put(2, new Article("Spitfire | Formula Four 101A Conical Full 54mm", 69.00F));
 		this.currencyConverterRepository = currencyConverterRepository;
+		currencyMapper();
 	}
 	
 	public void printPriceAndConversionByArticle() {
 		for (Map.Entry<Integer, Article> entry : articles.entrySet()) {
-			System.out.println(entry.getValue().getArticleName() + ": EUR: " + entry.getValue().getArticlePrice()
-					+ " | USD: " + currencyConverterRepository.conversionFrom(entry.getValue().getArticlePrice()));
+			System.out.println(entry.getValue().getArticleName() + ": " + inputCurrencyLabel + ": " + entry.getValue().getArticlePrice()
+					+ " | " + outputCurrencyLabel + ": " + currencyConverterRepository.conversionFrom(entry.getValue().getArticlePrice()));
+		}
+	}
+	
+	public void currencyMapper() {
+		if (currencyConverterRepository instanceof EuroDolarConversor) {
+			inputCurrencyLabel = "EUR";
+			outputCurrencyLabel = "USD";
+		} else if (currencyConverterRepository instanceof EuroYuanConversor) {
+			inputCurrencyLabel = "EUR";
+			outputCurrencyLabel = "CNY";
 		}
 	}
 
