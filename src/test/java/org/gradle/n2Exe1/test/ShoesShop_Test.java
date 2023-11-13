@@ -17,7 +17,7 @@ public class ShoesShop_Test {
 	private int id;
 	private ShoesShop shop;
 	private float amount;
-	private int method; // TDC = 1 Paypal = 2 Bank = 3
+	private int method; 
 	private String expectedCallbackResponse; 
 	
 	@BeforeEach
@@ -25,8 +25,8 @@ public class ShoesShop_Test {
 		id = 453334;
 		shop = new ShoesShop(id);
 		amount = 30.23F;
-		method = 1;
-		expectedCallbackResponse = "tdc payment done"; 
+		method = 1; // TDC = 1 Paypal = 2 Bank = 3
+		expectedCallbackResponse = "tdc payment done"; // TDC = "tdc payment done" Paypal = "paypal payment done" Bank = "bank payment donde"
 	}
 	
 	@DisplayName("Dado un llamado a PaymentGateway, validar que el body del callback no esta vacio")

@@ -13,6 +13,10 @@ public class ShoesShop {
 		methodCallback = new PaymentMethodCallback();
 	}
 	
+	public int getShopId() {
+		return shopId;
+	}
+
 	public String executePayment (float amounth, int method) {
 		payment = new Payment();
 		return payment.executePaymentWith(methodCallback, method, amounth);

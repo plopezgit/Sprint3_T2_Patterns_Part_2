@@ -4,6 +4,8 @@ public class App {
 	
 	public static void main(String[] args) {
 		
+		// The exercise was validate by unit test
+		
 		/*
 			Simula una **pasarela de pago** que reciba un objeto encapsulador del método de pago a efectuar: 
 			tarjeta de crédito, 
