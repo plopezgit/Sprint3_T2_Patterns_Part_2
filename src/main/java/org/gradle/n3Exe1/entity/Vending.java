@@ -15,7 +15,7 @@ public class Vending {
 		articles.put(1, new Article("Bones | OG Formula Sidecuts Skateboard Wheels 54mm", 39.00F));
 		articles.put(2, new Article("Spitfire | Formula Four 101A Conical Full 54mm", 69.00F));
 		this.currencyConverterRepository = currencyConverterRepository;
-		currencyMapper();
+		mapCurrencyLabel();
 	}
 	
 	public void printPriceAndConversionByArticle() {
@@ -25,7 +25,7 @@ public class Vending {
 		}
 	}
 	
-	public void currencyMapper() {
+	public void mapCurrencyLabel() {
 		if (currencyConverterRepository instanceof EuroDolarConversor) {
 			inputCurrencyLabel = "EUR";
 			outputCurrencyLabel = "USD";
