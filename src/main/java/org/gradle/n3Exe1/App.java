@@ -11,7 +11,7 @@ public class App {
 		CurrencyConverter currencyConverter = new EuroDolarConversor();
 		Vending vending = new Vending(currencyConverter);
 		
-		System.out.println(vending.showPriceByArticle(1, 1.07F));
+		System.out.println(vending.showPriceByArticle(1));
 
 	}
 

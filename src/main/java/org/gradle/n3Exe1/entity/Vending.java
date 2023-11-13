@@ -15,9 +15,9 @@ public class Vending {
 		this.currencyConverterRepository = currencyConverterRepository;
 	}
 	
-	public String showPriceByArticle (int key, float exchangeRate) {
+	public String showPriceByArticle (int key) {
 		return articles.get(key).getArticleName() + ": EUR: " + articles.get(key).getArticlePrice() + " | USD: " +
-				currencyConverterRepository.conversionFrom(exchangeRate, articles.get(key).getArticlePrice());
+				currencyConverterRepository.conversionFrom(articles.get(key).getArticlePrice());
 	}
 	
 	/*
