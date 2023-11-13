@@ -14,14 +14,8 @@ public class Vending {
 		articles.put(2, new Article("Spitfire | Formula Four 101A Conical Full 54mm", 69.00F));
 		this.currencyConverterRepository = currencyConverterRepository;
 	}
-
-	public String getPriceAndConversionByArticle(int key) {
-		return articles.get(key).getArticleName() + ": EUR: " + articles.get(key).getArticlePrice() + " | USD: "
-				+ currencyConverterRepository.conversionFrom(articles.get(key).getArticlePrice());
-	}
-
+	
 	public void printPriceAndConversionByArticle() {
-
 		for (Map.Entry<Integer, Article> entry : articles.entrySet()) {
 			System.out.println(entry.getValue().getArticleName() + ": EUR: " + entry.getValue().getArticlePrice()
 					+ " | USD: " + currencyConverterRepository.conversionFrom(entry.getValue().getArticlePrice()));
