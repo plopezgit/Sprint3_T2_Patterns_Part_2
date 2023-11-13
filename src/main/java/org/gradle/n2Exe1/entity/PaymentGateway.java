@@ -4,15 +4,15 @@ import org.gradle.n2Exe1.callback.PaymentMethodCallback;
 
 public abstract class PaymentGateway {
 	
-	public String executePaymentWith (PaymentMethodCallback callback) {
+	public String executePaymentWith (PaymentMethodCallback callback, int method, float amount) {
 		
 		Payment payment = new Payment();
-		payment.execute();
+		payment.execute(amount);
 		
-		return callback.call(1);
+		return callback.call(method);
 		
 	}
 	
-	public abstract void execute();
+	public abstract void execute(float amount);
 }
 
