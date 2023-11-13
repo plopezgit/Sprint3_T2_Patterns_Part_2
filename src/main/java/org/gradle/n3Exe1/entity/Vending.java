@@ -15,9 +15,17 @@ public class Vending {
 		this.currencyConverterRepository = currencyConverterRepository;
 	}
 	
-	public String showPriceByArticle (int key) {
+	public String getPriceAndConversionByArticle (int key) {		
 		return articles.get(key).getArticleName() + ": EUR: " + articles.get(key).getArticlePrice() + " | USD: " +
 				currencyConverterRepository.conversionFrom(articles.get(key).getArticlePrice());
+	}
+	
+	public void printPriceAndConversionByArticle () {
+		
+		for (Map.Entry<Integer, Article> entry : articles.entrySet()) {
+			System.out.println(entry.getValue().getArticleName() + ": EUR: " + entry.getValue().getArticlePrice() + " | USD: " +
+					currencyConverterRepository.conversionFrom(entry.getValue().getArticlePrice()));
+		}
 	}
 	
 	/*
