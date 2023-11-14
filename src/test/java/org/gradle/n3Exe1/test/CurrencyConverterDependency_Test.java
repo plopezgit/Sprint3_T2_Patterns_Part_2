@@ -12,18 +12,20 @@ import org.junit.jupiter.api.Test;
 public class CurrencyConverterDependency_Test {
 	
 	private CurrencyConverter currencyConverterEURUSD;
+	private float expectedResultEURUSD;
 	private CurrencyConverter currencyConverterEURCNY;
-	private float expectedResult;
+	private float expectedResultEURCNY;
 	private float amount;
-	private final float EXCHANGE_RATE = 1.07F;
-	
+	private final float EXCHANGE_RATE_EURUSD = 1.07F;
+	private final float EXCHANGE_RATE_EURCNY = 7.80F;
 	
 	@BeforeEach
 	public void setTestUp () {
-		currencyConverterEURUSD = new EuroDolarConversor();
-		currencyConverterEURCNY = new EuroYuanConversor();
-		expectedResult = amount * EXCHANGE_RATE;
 		amount = 100;
+		currencyConverterEURUSD = new EuroDolarConversor();
+		expectedResultEURUSD = amount * EXCHANGE_RATE_EURUSD;
+		currencyConverterEURCNY = new EuroYuanConversor();
+		expectedResultEURCNY = amount * EXCHANGE_RATE_EURCNY;
 	}
 	
 	@DisplayName("Dado que el CurrencyConverter: EuroDolarConversor implementation recibe x amount, validar que la conversion es correcta")
@@ -31,7 +33,7 @@ public class CurrencyConverterDependency_Test {
 	public void currencyConverterEURToUSDCheckResult () {
 
 		float response = currencyConverterEURUSD.convers(amount);
-		assertEquals(expectedResult, response);
+		assertEquals(expectedResultEURUSD, response);
 	}
 	
 	@DisplayName("Dado que el CurrencyConverter: EuroYuanConversor implementation recibe x amount, validar que la conversion es correcta")
@@ -39,7 +41,7 @@ public class CurrencyConverterDependency_Test {
 	public void currencyConverterEURToCNYCheckResult () {
 
 		float response = currencyConverterEURCNY.convers(amount);
-		assertEquals(expectedResult, response);
+		assertEquals(expectedResultEURCNY, response);
 	}
 	
 }
