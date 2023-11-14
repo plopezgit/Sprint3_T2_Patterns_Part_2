@@ -8,9 +8,13 @@ public class App {
 	public static void main(String[] args) {
 		
 		StockBrokerObservable stockBroker = new StockBrokerObservable();
-		stockBroker.addObserver(new BrokerHouseObserver("Vanguard"));
-		stockBroker.notifyObserver("$stoke is running low");
-		stockBroker.notifyObserver("$stoke is running high");
+		stockBroker.addObserver(new BrokerHouseObserver("Interactive Brokers LLC Obs."));
+		stockBroker.addObserver(new BrokerHouseObserver("Ally Invest Obs."));
+		stockBroker.addObserver(new BrokerHouseObserver("Charles Schwab Obs."));
+		stockBroker.addObserver(new BrokerHouseObserver("Fidelity Investments Obs."));
+		stockBroker.notifyObserver("HEXA.GO");
+		stockBroker.notifyObserver("POJO.B");
+		stockBroker.notifyObserver("MVC.A");
 		
 		
 		/*

@@ -20,9 +20,9 @@ public class StockBrokerObservable implements Observable {
 	}
 
 	@Override
-	public void notifyObserver(String trend) {
+	public void notifyObserver(String stockTickerSymbol) {
 		for (Observer o : brokerageHouses) {
-			o.update(trend);
+			o.update(stockTickerSymbol);
 		}
 
 	}
