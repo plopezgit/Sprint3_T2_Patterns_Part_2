@@ -21,7 +21,7 @@ public class BrokerHouseObserver implements Observer {
 		stocks.put("HEXA.GO", new Stock("HexagonalArchitects Corp.", 200.34F, 2.76F, '+'));
 		stocks.put("POJO.B", new Stock("PlainOldJavaObjectCorp S.A.", 1100.3F, 0.76F, '-'));
 	}
-
+	
 	@Override
 	public void update(String stockTickerSymbol) {
 		System.out.println(houseName + " | " + stocks.get(stockTickerSymbol).getStockName() + " " 
