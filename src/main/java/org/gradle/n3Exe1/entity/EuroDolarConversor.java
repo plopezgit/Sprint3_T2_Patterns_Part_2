@@ -5,7 +5,7 @@ public class EuroDolarConversor implements CurrencyConverter {
 	private final float EXCHANGE_RATE = 1.07F;
 	
 	@Override
-	public float conversionFrom(float amount) {
+	public float convers(float amount) {
 		return amount * EXCHANGE_RATE;
 	}
 }

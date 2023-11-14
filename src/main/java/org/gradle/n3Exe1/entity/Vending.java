@@ -21,7 +21,7 @@ public class Vending {
 	public void printPriceAndConversionByArticle() {
 		for (Map.Entry<Integer, Article> entry : articles.entrySet()) {
 			System.out.println(entry.getValue().getArticleName() + ": " + inputCurrencyLabel + ": " + entry.getValue().getArticlePrice()
-					+ " | " + outputCurrencyLabel + ": " + currencyConverterRepository.conversionFrom(entry.getValue().getArticlePrice()));
+					+ " | " + outputCurrencyLabel + ": " + currencyConverterRepository.convers(entry.getValue().getArticlePrice()));
 		}
 	}
 	
@@ -35,6 +35,7 @@ public class Vending {
 		}
 	}
 
+	
 	/*
 	 * Diseña una clase que muestre en pantalla el precio de varios artículos. Ya
 	 * que tendrá que mostrarlos también en varios tipos de moneda. Importante:
