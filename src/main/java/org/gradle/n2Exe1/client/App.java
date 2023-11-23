@@ -1,8 +1,16 @@
 package org.gradle.n2Exe1.client;
 
+import org.gradle.n2Exe1.entity.ShoesShop;
+
 public class App {
 	
 	public static void main(String[] args) {
+		
+		
+		ShoesShop shop = new ShoesShop();
+		System.out.println(shop.executePayment(200, 1));
+		System.out.println(shop.executePayment(200, 2));
+		System.out.println(shop.executePayment(200, 3));
 		
 		// The exercise was validate by unit test
 		

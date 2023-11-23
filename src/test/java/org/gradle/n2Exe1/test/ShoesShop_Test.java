@@ -14,7 +14,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 @TestMethodOrder(OrderAnnotation.class)
 public class ShoesShop_Test {
 	
-	private int id;
 	private ShoesShop shop;
 	private float amount;
 	private int method; 
@@ -22,8 +21,7 @@ public class ShoesShop_Test {
 	
 	@BeforeEach
 	public void setTestUp () {
-		id = 453334;
-		shop = new ShoesShop(id);
+		shop = new ShoesShop();
 		amount = 30.23F;
 		method = 1; // TDC = 1 Paypal = 2 Bank = 3
 		expectedCallbackResponse = "tdc payment done"; // TDC = "tdc payment done" Paypal = "paypal payment done" Bank = "bank payment donde"
