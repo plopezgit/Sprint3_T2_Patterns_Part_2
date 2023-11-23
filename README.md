@@ -1,4 +1,4 @@
-# Sprint3_T1_Patterns_Part_1
+# Sprint3_T1_Patterns_Part_2
 
 - Level 1
 
